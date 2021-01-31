@@ -1,4 +1,4 @@
-<li>
+{{!-- <li>
 	{{id}}. {{burger_name}}
 
 	<button class="change-devour" data-id="{{id}}" data-devoured="{{devoured}}">>
@@ -6,4 +6,40 @@
 	</button>
 
 	<button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
+</li> --}}
+
+{{!-- why is this not working? --}}
+{{!-- I lied this works now  --}}
+
+{{!-- <li class="d-flex align-items-center justify-content-between py-1 menus">
+    {{id}}. {{burger_name}}
+
+    <div>
+        {{#if devoured}}
+        <button type="button" title="Remake" class="btn btn-primary remake-burger" data-id="{{id}}"
+            data-devoured="{{devoured}}">Kiss Again  <i class="fas fa-redo"></i></button>
+        {{/if}}
+        <button type="button" title="{{#if devoured}}Trash {{else}}Eat{{/if}}" class="btn {{#if devoured}}btn-warning trash-burger {{else}}btn-success
+        change-devour{{/if}}" data-id="{{id}}" data-devoured="{{devoured}}">
+            {{#if devoured}}<i class="fas fa-trash-alt"></i>{{else}}eatnow <i class="fas fa-teeth-open"></i>{{/if}}
+        </button>
+    </div>
+</li> --}}
+
+
+{{!--  --}}
+
+<li>
+    {{id}}. {{burger_name}}
+
+    <div>
+        {{#if devoured}}
+        <button title="Remake" class="remake-burger" data-id="{{id}}"
+            data-devoured="{{devoured}}">Kiss Again</i></button>
+        {{/if}}
+        <button type="button" title="{{#if devoured}}Trash {{else}}Eat{{/if}}" class="btn {{#if devoured}}btn-warning trash-burger {{else}}btn-success
+        change-devour{{/if}}" data-id="{{id}}" data-devoured="{{devoured}}">
+            {{#if devoured}}DELETE{{else}}KISS NOW {{/if}}
+        </button>
+    </div>
 </li>

@@ -1,4 +1,4 @@
-<h1>Burgers</h1>
+{{!-- <h1>Burgers</h1>
 
 <h2>Menu</h2>
 
@@ -30,4 +30,151 @@
 </form>
 
   <button type="submit">Add Burger </button>
+</form> --}}
+
+
+{{!-- Let's try this  --}}
+<h1>LET'S KISS </h1>
+<h6> Name a babe you want to Kiss 
+</h6>
+
+<h2>LIST OF NAME</h2>
+<ul>
+    {{#each burger}}
+    {{#unless devoured}}
+    {{> burgers/burger-block devoured=false}}
+    {{/unless}}
+    {{/each}}
+</ul>
+
+    
+<h2 >Already KISSED</h2>
+<ul class="item-list pb-4">
+  {{#each burger}}
+  {{#if devoured}}
+  {{> burgers/burger-block devoured=true}}
+  {{/if}}
+  {{/each}}
+</ul>
+
+
+<h2>Add A Babe's name</h2>
+
+<form class="create-burger text-center px-2">
+    <div class="form-group">
+        <input type="text" class="form-control" id="burger" name="name">
+    </div>
+    <button class="btn btn-success" type="submit">Let's Mingle</button>
 </form>
+           
+
+
+
+
+
+
+
+{{!-- let try this agaain
+<div class="container">
+    <div class="row d-flex flex-column align-items-center py-3">
+        <h4 class="font-italic">WELCOME TO</h4>
+        <h1 class="font-weight-bold display-3">Cutie Burger</h1>
+        <img class="burger-picture" src="/assets/images/Cute-Summer-Burger.jpg" alt="burger-pic">
+    </div>
+
+    <div id="content-wrapper" class="rounded py-5 mb-5">
+        <div class="row justify-content-center text-center pb-4">
+            <div class="col-md-6">
+                <h6>Eat something off the menu, or add a burger you would like to eat down below. Remake or Trash your burger(s)
+                    afterwards! 
+                </h6>
+            </div>
+        </div>
+        <div class="row justify-content-around">
+            <div class="col-md-4 burger-list">
+                <h2 class="text-center font-weight-bold py-3">MENU</h2>
+                <ul class="item-list pb-4">
+                    {{#each burger}}
+                    {{#unless devoured}}
+                    {{> burgers/burger-block devoured=false}}
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-md-4 burger-list">
+                <h2 class="text-center font-weight-bold py-3">DEVOURED</h2>
+                <ul class="item-list pb-4">
+                    {{#each burger}}
+                    {{#if devoured}}
+                    {{> burgers/burger-block devoured=true}}
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="row justify-content-center pt-5">
+            <h2>Add A Cutie-Burger</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form class="create-burger text-center px-2">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="burger" name="name">
+                    </div>
+                    <button class="btn btn-danger" type="submit">Cook it up!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> --}}
+
+
+{{!-- THIRD TIME IS A CHARM  --}}
+
+        {{!-- <h1>LET'S KISS </h1>
+       
+
+    <div id="content-wrapper" class="rounded py-5 mb-5">
+        <div class="row justify-content-center text-center pb-4">
+            <div class="col-md-6">
+                <h6> Name a babe you want to Kiss 
+                </h6>
+            </div>
+        </div>
+        <div class="row justify-content-around">
+            <div class="col-md-4 burger-list">
+                <h2 class="text-center font-weight-bold py-3">LIST OF NAME</h2>
+                <ul class="item-list pb-4">
+                    {{#each burger}}
+                    {{#unless devoured}}
+                    {{> burgers/burger-block devoured=false}}
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-md-4 burger-list">
+                <h2 class="text-center font-weight-bold py-3">Already KISSED</h2>
+                <ul class="item-list pb-4">
+                    {{#each burger}}
+                    {{#if devoured}}
+                    {{> burgers/burger-block devoured=true}}
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="row justify-content-center pt-5">
+            <h2>Add A Babe's name</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form class="create-burger text-center px-2">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="burger" name="name">
+                    </div>
+                    <button class="btn btn-success" type="submit">Let's Mingle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> --}}
