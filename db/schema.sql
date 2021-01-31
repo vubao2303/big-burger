@@ -8,3 +8,14 @@ CREATE TABLE burgers
   burger_name VARCHAR (255) NOT NULL,
   devoured BOOLEAN 
 );
+
+
+INSERT INTO burgers
+    (burger_name)
+VALUES
+    ("Veggie Burger"),
+    ("Tofu Burger"),
+    ("Vietnamese Burger"),
+    ("Seafood Burger");
+
+    select * from burgers;
