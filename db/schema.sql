@@ -13,9 +13,12 @@ CREATE TABLE burgers
 INSERT INTO burgers
     (burger_name)
 VALUES
-    ("Veggie Burger"),
-    ("Tofu Burger"),
-    ("Vietnamese Burger"),
-    ("Seafood Burger");
+    ("Gloria"),
+    ("Jasmine"),
+    ("Jessny"),
+    ("Mahisha"),
+    ("Pamela"),
+    ("B");
+
 
     select * from burgers;

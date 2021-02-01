@@ -1,0 +1,45 @@
+li {
+  padding: 5px;
+  margin: 5px;
+  background: #faebd7;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+body {
+  background-image: url(../img/pinkh.jpg);
+  background-color: pink;
+}
+
+/* footer {
+  position: sticky;
+  position: -webkit-sticky; 
+  position: sticky;
+  bottom: 0px;
+  background:rgb(150, 196, 205);
+  height:60px; 
+  font-size: 20px;
+} */
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url(../img/pinkh.jpg);
+  height:60px; 
+  font-size: 30px;
+}
+
+a { color: black;}
