@@ -1,10 +1,10 @@
 
 $(() => {
   $(`.change-devour`).on(`click`, function(event) {
-    const id = $(this).data(`id`);
-    const newDevoured = true;
+    var id = $(this).data(`id`);
+    var newDevoured = true;
 
-    const newDevouredState = {
+    var newDevouredState = {
       devoured: newDevoured
     };
 
@@ -17,10 +17,10 @@ $(() => {
   });
 
   $(`.remake-burger`).on(`click`, function(event) {
-    const id = $(this).data(`id`);
-    const newDevoured = false;
+    var id = $(this).data(`id`);
+    var newDevoured = false;
 
-    const newDevouredState = {
+    var newDevouredState = {
       devoured: newDevoured
     };
 
@@ -33,7 +33,7 @@ $(() => {
   });
 
   $(`.trash-burger`).on(`click`, function(event) {
-    const id = $(this).data(`id`);
+    var id = $(this).data(`id`);
 
     $.ajax(`/api/burgers/${ id }`, {
       type: `DELETE`
@@ -45,7 +45,7 @@ $(() => {
   $(`.create-burger`).on(`submit`, event => {
     event.preventDefault();
 
-    const newBurger = {
+    var newBurger = {
       name: $(`#burger`).val().trim()
     };
 

@@ -1,12 +1,12 @@
 # big-burger
-You are in for a treat! It is Covid-season so our speak-easy-kissing booth is hiding as a burger shop. 
+You are in for a treat! It is Covid-season so our speak-easy-kissing booth is hiding as a burger shop. Using MySQL, Node, Express, Handlebars and ORM to create a Kissing Booth app where you can add a name of someone you want to kiss, kiss that person again, or delete that person out of the list after you are done kissing them. This project is deployed on Heroku. The user input's name will be display on the left, when the kiss button is clicked, that person's name is moved to the right. Let's migle! 
 
 
 ## Demo-video 
 
 [Demo Video]()  
 
-![Site Picture]()
+![Site Picture](public/assets/img/mainpage.png)
 
 
 ## Heroku-Deployed
@@ -14,7 +14,7 @@ You are in for a treat! It is Covid-season so our speak-easy-kissing booth is hi
 [Deployed Link]()  
 
 # Table of Contents 
-[Tittle](#)
+[Tittle](#big-buger)
 
 [Demo Video](#Demo-video )
 
@@ -66,28 +66,71 @@ You are in for a treat! It is Covid-season so our speak-easy-kissing booth is hi
 
 
 ## Code Snippet
-Install npm package 
-npm install express
+Install npm package: express, mysql, express-handlebars
 
 Required variables 
 ``` Javascript
-
+ var mysql = require("mysql");
+var connection = require(`../config/connection.js`);
+var express = require(`express`);
+var router = express.Router();
+var orm = require(`../config/orm.js`);
+var PORT = process.env.PORT || 8080;
+var app = express();
 ```
 
 Sets up the Express app to handle data parsing
 ``` Javascript
-
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 ```
 
 Set routes to handle when user "visit" the page 
 ``` Javascript
+router.get(`/`, (req, res) => {
+  burger.all(data => {
+    var hbsObject = {
+      burger: data
+    };
+    res.render(`index`, hbsObject);
+  });
+});
+
+router.post(`/api/burgers`, (req, res) => {
+  burger.create([`burger_name`], [req.body.name], result => {
+    res.json({ id: result.insertId });
+  });
+});
 
 ```
+Add orm object to create helper functions for SQL syntax
+``` Javascript
+var orm = {
+  selectAll(tableInput, cb) {
+    var queryString = `SELECT * FROM ${ tableInput };`;
+    connection.query(queryString, (err, result) => {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+```
 
-do this because 
+Make Connecion with database 
 ``` Javascript 
-
+var connection = mysql.createConnection({
+  host: "localhost",
+  port: 3306,
+  user: "root",
+  password: "password",
+  database: "burgers_db"
+});
 ```
+
 
 ## Technologies Used
 - Node - an open-source, cross-platform, back-end JavaScript runtime environment that executes JavaScript code outside a web browser.
@@ -99,6 +142,8 @@ do this because
 - Express - a Node js web application server framework, which is specifically designed for building single-page, multi-page, and hybrid web applications
   * [Express](http://expressjs.com/en/api.html#express)
 
+- Handlebars - uses a template and an input object to generate HTML or other text formats.
+  * [Handlebars](https://handlebarsjs.com/guide/)
 
 ## Author
 

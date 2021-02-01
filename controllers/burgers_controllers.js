@@ -1,11 +1,11 @@
-const express = require(`express`);
-const router = express.Router();
+var express = require(`express`);
+var router = express.Router();
 
-const burger = require(`../models/burger.js`);
+var burger = require(`../models/burger.js`);
 
 router.get(`/`, (req, res) => {
   burger.all(data => {
-    const hbsObject = {
+    var hbsObject = {
       burger: data
     };
     res.render(`index`, hbsObject);
@@ -19,9 +19,9 @@ router.post(`/api/burgers`, (req, res) => {
 });
 
 router.put(`/api/burgers/:id`, (req, res) => {
-  const condition = `id = ${ req.params.id }`;
-  const badRequest = 400;
-  const okRequest = 200;
+  var condition = `id = ${ req.params.id }`;
+  var badRequest = 400;
+  var okRequest = 200;
 
   burger.update(
     { devoured: req.body.devoured },
@@ -37,9 +37,9 @@ router.put(`/api/burgers/:id`, (req, res) => {
 });
 
 router.delete(`/api/burgers/:id`, (req, res) => {
-  const condition = `id = ${ req.params.id }`;
-  const serverError = 404;
-  const okRequest = 200;
+  var condition = `id = ${ req.params.id }`;
+  var serverError = 404;
+  var okRequest = 200;
 
   burger.delete(condition, result => {
     if (result.affectedRows === 0) {

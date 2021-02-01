@@ -2,7 +2,7 @@
 // var connection = require("../config/connection.js");
 
 // // Helper function for SQL syntax.
-// // Let's say we want to pass 3 values into the mySQL query.
+// // var's say we want to pass 3 values into the mySQL query.
 // // In order to write the query, we need 3 question marks.
 // // The above helper function loops through and creates an array of question marks - ["?", "?", "?"] - and turns it into a string.
 // // ["?", "?", "?"].toString() => "?,?,?";
@@ -96,12 +96,12 @@
 
 
 // try this again 
-const connection = require(`../config/connection.js`);
+var connection = require(`../config/connection.js`);
 
 function printQuestionMarks(num) {
-  const arr = [];
+  var arr = [];
 
-  for (let i = 0; i < num; ++i) {
+  for (var i = 0; i < num; ++i) {
     arr.push(`?`);
   }
 
@@ -109,11 +109,11 @@ function printQuestionMarks(num) {
 }
 
 function objToSql(ob) {
-  const arr = [];
+  var arr = [];
 
   // eslint-disable-next-line guard-for-in
-  for (const key in ob) {
-    let value = ob[key];
+  for (var key in ob) {
+    var value = ob[key];
     if (Object.hasOwnProperty.call(ob, key)) {
       if (typeof value === `string` && value.indexOf(` `) >= 0) {
         value = `'${ value }'`;
@@ -124,9 +124,9 @@ function objToSql(ob) {
   return arr.toString();
 }
 
-const orm = {
+var orm = {
   selectAll(tableInput, cb) {
-    const queryString = `SELECT * FROM ${ tableInput };`;
+    var queryString = `SELECT * FROM ${ tableInput };`;
     connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
@@ -135,7 +135,7 @@ const orm = {
     });
   },
   insertOne(table, cols, vals, cb) {
-    let queryString = `INSERT INTO ${ table }`;
+    var queryString = `INSERT INTO ${ table }`;
 
     queryString += ` (`;
     queryString += cols.toString();
@@ -152,7 +152,7 @@ const orm = {
     });
   },
   updateOne(table, objColVals, condition, cb) {
-    let queryString = `UPDATE ${ table }`;
+    var queryString = `UPDATE ${ table }`;
 
     queryString += ` SET `;
     queryString += objToSql(objColVals);
@@ -166,8 +166,8 @@ const orm = {
       cb(result);
     });
   },
-  deleteOne(table, condition, cb) {
-    let queryString = `DELETE FROM ${ table }`;
+  devareOne(table, condition, cb) {
+    var queryString = `DEvarE FROM ${ table }`;
     queryString += ` WHERE `;
     queryString += condition;
 
