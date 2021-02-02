@@ -34,19 +34,19 @@ You are in for a treat! It is Covid-season so our speak-easy-kissing booth is hi
 
 
 ## Description of Page Building 
-* Install dependencies packages using npm install, which inclues 
+* Install dependencies packages using npm install, which inclues express, mysql, express-handlebars
 * Create folders. Make sure to export modules so files can be used in different places.   
 * In datase folder, create table with id, name, and boolean value.
-* In config folder, add connection and orm files. Connection files set up MySQL connection; orm file contain helper functions for SQL syntax.
-* Burger.js file in models table then import the ORM to create functions that will interact with the database.
+* In config folder, add connection and orm files. Connection file sets up MySQL connection; orm file contains helper functions for SQL syntax.
+* Burger.js file in models folder then import the ORM to create functions that will interact with the database.
 * Controler file import the model to use its database functions. It creates all our routes and set up logic within those routes where required.
 
 
 * Public folder
   <ul> 
-  <li> Contain javasctip file which activates buttons and send request as well as reload the page to get the updated user input 
+  <li> Contain javasctip file which activates buttons and send request as well as reload the page to update user input 
   <li> Css file to decorate the page 
-  <li> Image file with all the imgages for background and interface 
+  <li> Image file with all the images for background and interface 
   </li>
   </ul>
 
@@ -70,7 +70,7 @@ Install npm package: express, mysql, express-handlebars
 
 Required variables 
 ``` Javascript
- var mysql = require("mysql");
+var mysql = require("mysql");
 var connection = require(`../config/connection.js`);
 var express = require(`express`);
 var router = express.Router();
@@ -144,7 +144,8 @@ var connection = mysql.createConnection({
 
 - Handlebars - uses a template and an input object to generate HTML or other text formats.
   * [Handlebars](https://handlebarsjs.com/guide/)
-
+- -MySQL Database Service - a fully managed database service to deploy cloud-native applications.
+  * [MySQL](https://dev.mysql.com/doc/workbench/en/)
 ## Author
 
 * **B Tram Vu** 
