@@ -58,14 +58,18 @@
 
 // / Set up MySQL connection.
 const mysql = require('mysql');
-const connection = mysql.createConnection({
-  host: process.env.host ||'localhost',
-  port: 3306,
-  user: process.env.user || 'root',
-  // NOTE: Be sure to add your MySQL password here! we defaulted to : password
-  password: process.env.password || 'password',
-  database: process.env.db || "burgers_db",
-});
+
+const connection = mysql.createConnection(process.env.JAWSDB_URL);
+
+
+// const connection = mysql.createConnection({
+//   host: process.env.host ||'localhost',
+//   port: 3306,
+//   user: process.env.user || 'root',
+//   // NOTE: Be sure to add your MySQL password here! we defaulted to : password
+//   password: process.env.password || 'password',
+//   database: process.env.db || "burgers_db",
+// });
 // Make connection.
 connection.connect((err) => {
   if (err) {
