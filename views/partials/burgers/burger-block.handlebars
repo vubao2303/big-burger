@@ -1,15 +1,3 @@
-{{!-- <li>
-	{{id}}. {{burger_name}}
-
-	<button class="change-devour" data-id="{{id}}" data-devoured="{{devoured}}">>
-		 {{#if devoured}}Yummy{{else}}Let's eat{{/if}}
-	</button>
-
-	<button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
-</li> --}}
-
-{{!-- why is this not working? --}}
-{{!-- I lied this works now  --}}
 
 <li class="d-flex align-items-center justify-content-between py-1 menus">
     {{burger_name}}
@@ -27,20 +15,3 @@
     </div>
 </li>
 
-
-{{!--  --}}
-
-{{!-- <li>
-    {{id}}. {{burger_name}}
-
-    <div>
-        {{#if devoured}}
-        <button title="Remake" class="remake-burger" data-id="{{id}}"
-            data-devoured="{{devoured}}">Kiss Again</i></button>
-        {{/if}}
-        <button type="button" title="{{#if devoured}}Trash {{else}}Eat{{/if}}" class="btn {{#if devoured}}btn-warning trash-burger {{else}}btn-success
-        change-devour{{/if}}" data-id="{{id}}" data-devoured="{{devoured}}">
-            {{#if devoured}}DELETE{{else}}KISS NOW {{/if}}
-        </button>
-    </div>
-</li> --}}
