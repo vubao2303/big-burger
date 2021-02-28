@@ -1,5 +1,5 @@
 # big-burger-kissingbooth
-You are in for a treat! It is Covid-season so our speak-easy-kissing booth is hiding as a burger shop. Using MySQL, Node, Express, Handlebars and ORM to create a Kissing Booth app where you can add a name of someone you want to kiss, kiss that person again, or delete that person out of the list after you are done kissing them. This project is deployed on Heroku. The user input's name will be display on the left, when the kiss button is clicked, that person's name is moved to the right. Let's migle! 
+You are in for a treat! It is Covid-season so our speak-easy-kissing booth is hiding as a burger shop. Using MySQL, Node, Express, Handlebars and ORM to create a Kissing Booth app where you can add a name of someone you want to kiss, kiss that person again, or delete that person's name after you are done kissing them. Let's mingle! 
 - [Link to Portfolio Site](https://vubao2303.github.io/portfolio/)
 
 # site-picture 
